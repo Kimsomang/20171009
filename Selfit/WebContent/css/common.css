@@ -17,7 +17,7 @@ input.navi{
 	padding: 5px;
 	width: 1366px;
 	text-align: left;
-	border-top: 5px solid #FF3334;
+	background-color: #FF3334;
 }
 
 #contents {
@@ -36,7 +36,6 @@ input.navi{
 #logInfo {
 	width: 450px;
 	height: 170px;
-	border: 1px solid #033452;
 	margin: 10px 0;
 	float: left;
 }
@@ -44,7 +43,6 @@ input.navi{
 #banner {
 	width: 900px;
 	height: 170px;
-	border: 1px solid #033452;
 	margin: 10px 5px;
 	float: left;
 }

@@ -1,36 +1,7 @@
-div.manageTable {
-	border: 1px solid;
-	border-color: #28282C;
-	margin: 0 auto;
-}
-
-div.tdStyle {
-	float: Left;
-}
-
-div.trStyle {
-	clear: both;
-}
-
-div.contentsColumn {
-	width: 200px;
-	height: 30px;
-	text-align: center;
-	line-height: 30px;
-	text-decoration: none;
-}
-
-img.weeklyBest {
-	width: 200px;
-	height: 300px;
-	margin: 5px auto;
-}
-
 #hotContents {
 	clear: both;
 	width: 1355px;
 	height: 400px;
-	border: 1px solid #28282C;
 	margin: 5px auto;
 	text-align: center;
 }
@@ -39,6 +10,9 @@ img.weeklyBest {
 	margin: 5px auto;
 	display: inline-block;
 	vertical-align: middle;
+	overflow: auto;
+	width: 1500px;
+	height: 500px;
 }
 
 #bodyTable {
@@ -89,8 +63,56 @@ img.weeklyBest {
 	vertical-align: middle;
 }
 
+div.manageTable {
+	border: 1px solid;
+	border-color: #28282C;
+	margin: 0 auto;
+}
+
+div.tdStyle {
+	float: Left;
+}
+
+div.trStyle {
+	clear: both;
+}
+
+div.contentsColumn {
+	width: 200px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	text-decoration: none;
+}
+
+img.weeklyBest {
+	width: 200px;
+	height: 300px;
+	margin: 0 5px;
+}
+
 input.textBox {
 	width: 197px;
 	height: 25px;
 	margin: 0 auto;
+}
+
+.table_small {
+	table-layout: fixed;
+	width: 80px;
+}
+
+.table_normal {
+	table-layout: fixed;
+	width: 100px;
+}
+
+.table_large {
+	table-layout: fixed;
+	width: 200px;
+}
+
+.table_larger {
+	table-layout: fixed;
+	width: 300px;
 }

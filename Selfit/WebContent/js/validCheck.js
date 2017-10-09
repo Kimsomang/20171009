@@ -103,6 +103,7 @@
 			signMsg.innerText = testMsg;
 			return false;
 		}else{
+			alert('회원가입되셨습니다.');
 			return true;
 		}
 		

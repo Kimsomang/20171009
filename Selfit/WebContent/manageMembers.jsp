@@ -16,40 +16,33 @@
 	<%@ include file="header.jsp" %>
 </div>
 <div id="contents">
+	<h2>회 원 관 리</h2>
 	<div id="memberTable">
-	<h3>회원관리 페이지</h3>
-	
-	<table border="1">
+	<table>
 		<tr>
-			<td>아이디</td>
-			<td>비밀번호</td>
-			<td>이름</td>
-			<td>생년월일</td>
+			<td class="table_large">아이디</td>
+			<td class="table_small">이름</td>
+			<td class="table_small">생년월일</td>
 			<td>성별</td>
-			<td>핸드폰번호</td>
-			<td>우편번호</td>
-			<td>주소</td>
-			<td>상세주소</td>
+			<td class="table_normal">핸드폰번호</td>
+			<td class="table_larger">주소</td>
 			<td>체형</td>
 			<td>회원등급</td>
-			<td>선호브랜드</td>
-			<td>가입일</td>
-			<td>회원상태</td>
-			<td>마지막회원상태변경일</td>
-			<td>활동횟수</td>
+			<td class="table_normal">선호브랜드</td>
+			<td class="table_small">가입일</td>
+			<td class="table_small">회원상태</td>
+			<td class="tabel_small">마지막회원상태변경일</td>
+			<td class="table_small">활동횟수</td>
 		</tr>
 		<c:forEach var="idx" items="${requestScope.getAllMembers}">
 		<c:set var="memberId" value="${idx.memberId}"/>
 		<tr>
 			<td><a href="control?action=updateMembers&id=${memberId}">${memberId}</a></td>
-			<td>${idx.memberPw}</td>
 			<td>${idx.memberName}</td>
 			<td>${idx.memberBirth}</td>
 			<td>${idx.memberSex}</td>
 			<td>${idx.memberPhone}</td>
-			<td>${idx.memberPost}</td>
 			<td>${idx.memberAddress1}</td>
-			<td>${idx.memberAddress2}</td>
 			<td>${idx.memberBody}</td>
 			<td>${idx.memberGrade}</td>
 			<td>${idx.memberBrand}</td>

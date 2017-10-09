@@ -117,11 +117,48 @@ public class MembersDAO {
 		return null;
 	}
 	
+	public boolean isUpStatus(String id, String status) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select member_status from members where member_id = ?";
+		
+			try {
+				conn = factory.getConnect();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					String memberStatus = rs.getString("MEMBER_STATUS");
+					
+					if(memberStatus.equals(status)) {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println("회원정보 조회 오류");
+			} finally {
+				factory.close(conn, pstmt, rs);
+			}
+		return false;
+	}
+	
 	public int updateMembers(Members member) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "update members set member_pw=?, member_name=?, member_phone=?, member_post=?, member_address1=?, member_address2=?,"
-				+ "member_body=?, member_grade=?, member_brand=?, member_status=?, member_update=to_char(sysdate, 'yy.mm.dd') where member_id = ?";
+		String sql;
+		if(!isUpStatus(member.getMemberId(), member.getMemberStatus())) {
+			sql = "update members set member_pw=?, member_name=?, member_phone=?, member_post=?, member_address1=?, member_address2=?,"
+				+ "member_body=?, member_grade=?, member_brand=?, member_status=?, member_update=to_char(sysdate, 'yyyy.mm.dd') where member_id = ?";
+		} else {
+			sql = "update members set member_pw=?, member_name=?, member_phone=?, member_post=?, member_address1=?, member_address2=?,"
+					+ "member_body=?, member_grade=?, member_brand=?, member_status=? where member_id = ?";
+		}
 		
 		try {
 			conn = factory.getConnect();
@@ -154,7 +191,7 @@ public class MembersDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
-		String sql = "insert into members values(?,?,?,?,?,?,?,?,?,?,?,'','','','','')"; 
+		String sql = "insert into members values(?,?,?,?,?,?,?,?,?,?,?,'',to_char(sysdate, 'yyyy.mm.dd'),'U',to_char(sysdate, 'yyyy.mm.dd'), 0)"; 
 		
 		try {
 			conn = factory.getConnect();

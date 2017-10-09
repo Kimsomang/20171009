@@ -65,7 +65,7 @@ function deleteC() {
 	<hr>
 	<br>
 	<div id="contentTable">
-	<form name="categoryForm">
+	<form name="categoryForm" method="post">
 		<div>
 			<div class="trStyle">
 				<div class="manageTable tdStyle contentsColumn">카테고리번호 : </div>

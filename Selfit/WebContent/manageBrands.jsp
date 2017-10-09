@@ -61,7 +61,7 @@ function deleteB() {
 	<hr>
 	<br>
 	<div id="brandTable">
-	<form name="brandForm">
+	<form name="brandForm" method="post">
 	<div>
 		<div class="trStyle">
 			<div class="manageTable tdStyle contentsColumn">브랜드식별번호 : </div>

@@ -981,31 +981,24 @@ public class MainControl extends HttpServlet {
 		case "signin": 
 			signin(request, response);
 			break;
-			
 		case "postService": 
 			postService(request, response);
 			break;
-
 		case "login": 
 			login(request, response);
 			break;
-			
 		case "idfind": 
 			idfind(request, response);
 			break;
-			
 		case "pwfind": 
 			pwfind(request, response);
 			break;
-			
 		case "mypage": 
 			mypage(request, response);
 			break;
-			
 		case "update": 
 			update(request, response);
 			break;
-			
 		case "changePw": 
 			changePw(request, response);
 			break;

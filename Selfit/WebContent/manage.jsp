@@ -36,12 +36,11 @@ if (memberId == null || memberId.trim().isEmpty()) {
 	width="150px" height="50px"></a>
 	</div>
 	<div id="hotContents">
-		<h4>W/E/E/K/L/Y/B/E/S/T</h4><br>
+		<h2>W/E/E/K/L/Y/B/E/S/T</h2>
 		<img class="weeklyBest" alt="hotContents1" src="img/img_nike.PNG">
 		<img class="weeklyBest" alt="hotContents2" src="img/img_nike2.PNG">
 		<img class="weeklyBest" alt="hotContents3" src="img/img_adidas.PNG">
 		<img class="weeklyBest" alt="hotContents4" src="img/img_adidas2.PNG">
-		<img class="weeklyBest" alt="hotContents5" src="img/img_gucci.PNG">
 		<img class="weeklyBest" alt="hotContents6" src="img/img_8seconds.PNG">
 		<img class="weeklyBest" alt="hotContents7" src="img/img_toryburch.PNG">
 	</div>

@@ -52,7 +52,7 @@ function deleteB() {
 		</tr>
 		</c:forEach>
 	</table>
-	<form name="bodyForm">	
+	<form name="bodyForm" method="post">	
 		<div style="clear: both">
 			<div>체형식별번호 : <input type = "text" name="bodysId"></div>
 			<div>체형이름 : <input type = "text" name="bodysName"></div>
