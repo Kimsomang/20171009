@@ -1,0 +1,94 @@
+div.manageTable {
+	border: 1px solid;
+	border-color: #28282C;
+	margin: 0 auto;
+}
+
+div.tdStyle {
+	float: Left;
+}
+
+div.trStyle {
+	clear: both;
+}
+
+div.contentsColumn {
+	width: 200px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	text-decoration: none;
+}
+
+#hotContents {
+	clear: both;
+	width: 1355px;
+	height: 200px;
+	border: 1px solid #28282C;
+	margin: 5px auto;
+}
+
+#bt_contents {
+	clear: both;
+	
+}
+
+#memberTable {
+	margin: 5px auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#bodyTable {
+	margin: 5px auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#brandTable {
+	margin: 5px auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#contactTable {
+	margin: 5px auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#contentTable {
+	margin: 5px auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#updateBodyForm {
+	margin: 5px auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#updateBrandForm {
+	margin: 5px auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#updateContentForm {
+	margin: 5px auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#updateMemberForm {
+	margin: 5px auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+input.textBox {
+	width: 197px;
+	height: 25px;
+	margin: 0 auto;
+}
