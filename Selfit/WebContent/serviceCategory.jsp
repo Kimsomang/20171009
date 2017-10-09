@@ -10,7 +10,7 @@
 		<div class="left">
 		</div>
 		<div class="left">
-			<input type="button" class="bt_type1" name="bt_unselectAll" id="bt_unselectAll" value="모두 해제하기" title="모두 선택해제하려면 여기를 클릭하세요" onclick="checkAll()">
+			<input type="button" class="bt_type1" name="bt_unselectAll" id="bt_unselectAll" value="모두 선택하기" title="모두 선택해제하려면 여기를 클릭하세요" onclick="checkAll()">
 		</div>
 		<div class="left">
 			<input type="button" class="bt_type1" name="bt_unselectAll" id="bt_unselectAll" value="모두 해제하기" title="모두 선택해제하려면 여기를 클릭하세요" onclick="reset()">

@@ -345,9 +345,13 @@ public class MainControl extends HttpServlet {
 	protected void mypage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean isLogin = isLogin(request);
 		if(isLogin) {
-			Members member = service.selectMember(getId(request));
-			request.setAttribute("member", member);
-			request.getRequestDispatcher("mypage.jsp").forward(request, response);
+			if(getGrade(request).equals("A")) {
+				getAdminInfo(request,response);
+			} else {
+				Members member = service.selectMember(getId(request));
+				request.setAttribute("member", member);
+				request.getRequestDispatcher("mypage.jsp").forward(request, response);
+			}
 		}else {
 			request.setAttribute("error", "로그인 정보가 없습니다!");
 			request.getRequestDispatcher("/error.jsp").forward(request, response);
