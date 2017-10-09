@@ -1,12 +1,13 @@
-﻿-- 2017_0929 김재림 v 1.0
+-- 2017_1009 김소망 v 2.0
 -- 초기데이터 설정
-insert into CATEGORIES VALUES('100', 'T셔츠', '티셔츠입니다');
-insert into CATEGORIES VALUES('200', 'Y셔츠', '티셔츠입니다');
+insert into CATEGORIES VALUES('100', 'T셔츠', 'T셔츠입니다');
+insert into CATEGORIES VALUES('200', 'Y셔츠', 'Y셔츠입니다');
 insert into CATEGORIES VALUES('300', '팬츠', '티셔츠입니다');
-insert into CATEGORIES VALUES('400', '테스트1', '테스트1');
-insert into CATEGORIES VALUES('500', '테스트2', '테스트2');
-insert into CATEGORIES VALUES('600', '테스트3', '테스트3');
-insert into CATEGORIES VALUES('700', '테스트4', '테스트4');
+insert into CATEGORIES VALUES('400','블라우스','블라우스입니다');
+insert into CATEGORIES VALUES('500','스커트','스커트입니다');
+insert into CATEGORIES VALUES('600','슬랙스','슬랙스입니다');
+insert into CATEGORIES VALUES('700','코트','코트입니다');
+insert into CATEGORIES VALUES('800','청자켓','청자켓입니다');
 
 -- 카테고리 전체 조회
 select * from categories

@@ -25,7 +25,6 @@ public class ContactsDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select*from contacts";
-		Utility util = new Utility();
 		
 		try {
 			conn = factory.getConnect();
@@ -39,7 +38,7 @@ public class ContactsDAO {
 				String contactPerson = rs.getString("contact_person");
 				String contactTel = rs.getString("contact_tel");
 				String contactEmail = rs.getString("contact_email");
-				String contactDate = util.getDate();
+				String contactDate = rs.getString("contact_date");
 				
 				contactList.add(new Contacts(contactCorp, contactPerson, contactTel, contactEmail, contactDate));
 			}
@@ -57,6 +56,7 @@ public class ContactsDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = "insert into contacts values(?, ?, ?, ?, ?)";
+		Utility util = new Utility();
 		
 		try {
 			conn = factory.getConnect();
@@ -66,7 +66,7 @@ public class ContactsDAO {
 			pstmt.setString(2, contact.getContactPerson());
 			pstmt.setString(3, contact.getContactTel());
 			pstmt.setString(4, contact.getContactEmail());
-			pstmt.setString(5, contact.getContactDate());
+			pstmt.setString(5, util.getDate());
 			
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {

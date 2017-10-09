@@ -1,4 +1,4 @@
--- 2017_0929 김재림 v 1.0
+-- 2017_1009 김소망 v 2.0
 -- BODYS 테이블 생성
 CREATE TABLE BODYS(
 	BODY_ID VARCHAR2(3) NOT NULL,
