@@ -28,7 +28,7 @@
 	<!-- 하단 명령부, 조회하기/돌아가기 -->
 	<div class="wrapper">
 		<div class="left">
-			<input type="button" class="bt_type1" name="bt_submit" id="bt_submit" value="조회하기" title="선택한 카테고리에 대한 브랜드 결과를 조회합니다." onclick="return categoriesSubmit()">
+			<input type="submit" class="bt_type1" name="bt_submit" id="bt_submit" value="조회하기" title="선택한 카테고리에 대한 브랜드 결과를 조회합니다." onclick="return categoriesSubmit()">
 		</div>
 		<div class="left">
 			<input type="reset" class="bt_type1" value="되돌아가기" title="내용을 초기화 하려면 여기를 클릭하세요">	
