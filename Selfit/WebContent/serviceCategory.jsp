@@ -39,3 +39,12 @@
 		<span id="errMsg" class="warning"></span>
 	</div>
 </form>
+<div id="hotContents">
+		<h2>W/E/E/K/L/Y/B/E/S/T</h2>
+		<img class="weeklyBest" alt="hotContents1" src="img/img_nike.PNG" title="해당제품 보러가기">
+		<img class="weeklyBest" alt="hotContents2" src="img/img_nike2.PNG" title="해당제품 보러가기">
+		<img class="weeklyBest" alt="hotContents3" src="img/img_adidas.PNG" title="해당제품 보러가기">
+		<img class="weeklyBest" alt="hotContents4" src="img/img_adidas2.PNG" title="해당제품 보러가기">
+		<img class="weeklyBest" alt="hotContents6" src="img/img_8seconds.PNG" title="해당제품 보러가기">
+		<img class="weeklyBest" alt="hotContents7" src="img/img_toryburch.PNG" title="해당제품 보러가기">
+	</div>

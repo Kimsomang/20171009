@@ -8,11 +8,10 @@
 <link type="text/css" rel="stylesheet" href="css/common.css">
 <link type="text/css" rel="stylesheet" href="css/manage.css">
 <script type="text/javascript">
-
 function init() {
-	document.categoryForm.cateId.value="${requestScope.getCategory.categoriesId}";
-	document.categoryForm.cateName.value="${requestScope.getCategory.categoriesName}";
-	document.categoryForm.cateDesc.value="${requestScope.getCategory.categoriesDesc}";
+	document.categoryForm.categoriesId.value="${requestScope.getCategory.categoriesId}";
+	document.categoryForm.categoriesName.value="${requestScope.getCategory.categoriesName}";
+	document.categoryForm.categoriesDesc.value="${requestScope.getCategory.categoriesDesc}";
 }
 
 function cancel() {
@@ -30,19 +29,33 @@ window.onload = function() {
 	<%@ include file="header.jsp" %>
 </div>
 <div id="contents">
-	<div id="updateContentForm">
-	<h3>카테고리 수정 페이지</h3>
-	
+	<h2>카 테 고 리 관 리</h2>
 	<form name="categoryForm" method="post" action="control?action=updateCategory">
-	<div>
-		<div>카테고리번호 : <input type ="text" name="cateId"></div>
-		<div>카테고리이름 : <input type ="text" name="cateName"></div>
-		<div>카테고리설명 : <input type ="text" name="cateDesc"></div>
-		<div><input type="submit" id="bt_update" value="확인">
-		<input type="button" value="취소" onClick="cancel()"></div>
+	<div id="updateContentForm">
+		<div class="trStyle">
+			<div class="tdStyle textSize contentsColumn2">카테고리식별번호 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type ="text" name="categoriesId" readOnly>
+			</div>
+		</div>
+		<div class="trStyle">	
+			<div class="tdStyle textSize contentsColumn2">카테고리이름 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type ="text" name="categoriesName">
+			</div>
+		</div>
+		<div class="trStyle">	
+			<div class="tdStyle textSize contentsColumn2">카테고리설명 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type ="text" name="categoriesDesc">
+			</div>
+		</div>
+		<div class="trStyle">
+			<input class="bt_size" type="submit" id="bt_update" value="수정">
+			<input class="bt_size" type="button" value="취소" onClick="cancel()">
+		</div>
 	</div>
 	</form>
-	</div>
 </div>
 <div id="footer">
 	<%@ include file="footer.jsp" %>

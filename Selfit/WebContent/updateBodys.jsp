@@ -8,7 +8,6 @@
 <link type="text/css" rel="stylesheet" href="css/common.css">
 <link type="text/css" rel="stylesheet" href="css/manage.css">
 <script type="text/javascript">
-
 function init() {
 	document.bodyForm.bodysId.value="${requestScope.getBody.bodyId}";
 	document.bodyForm.bodysName.value="${requestScope.getBody.bodyName}";
@@ -30,19 +29,33 @@ window.onload = function() {
 	<%@ include file="header.jsp" %>
 </div>
 <div id="contents">
-	<div id="updateBodyForm">
-	<h3>체형관리 수정 페이지</h3>
-	
+	<h2>체 형 관 리</h2>
 	<form name="bodyForm" method="post" action="control?action=updateBodys">
-	<div>
-		<div>체형식별번호 : <input type ="text" name="bodysId"></div>
-		<div>체형이름 : <input type ="text" name="bodysName"></div>
-		<div>체형설명 : <input type ="text" name="bodysDesc"></div>
-		<div><input type="submit" id="bt_update" value="확인">
-		<input type="button" value="취소" onClick="cancel()"></div>
+	<div id="updateBodyForm">
+		<div class="trStyle">
+			<div class="tdStyle textSize contentsColumn">체형식별번호 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type ="text" name="bodysId" readOnly>
+			</div>
+		</div>
+		<div class="trStyle">	
+			<div class="tdStyle textSize contentsColumn">체형이름 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type ="text" name="bodysName">
+			</div>
+		</div>
+		<div class="trStyle">	
+			<div class="tdStyle textSize contentsColumn">체형설명 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type ="text" name="bodysDesc">
+			</div>
+		</div>	
+		<div class="trStyle">
+			<input class="bt_size" type="submit" id="bt_update" value="수정">
+			<input class="bt_size" type="button" value="취소" onClick="cancel()">
+		</div>
 	</div>
 	</form>
-	</div>
 </div>
 <div id="footer">
 	<%@ include file="footer.jsp" %>

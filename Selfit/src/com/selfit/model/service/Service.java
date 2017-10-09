@@ -139,25 +139,25 @@ public class Service {
 	
 	public void insertCategory(Categories category) {
 		if(categoryDAO.insertCategory(category) == 0) {
-			System.out.println("컨텐츠 삽입실패");
+			System.out.println("카테고리 삽입실패");
 		} else {
-			System.out.println("컨텐츠 삽입성공");
+			System.out.println("카테고리 삽입성공");
 		}
 	}
 	
 	public void updateCategory(Categories category) {
 		if(categoryDAO.updateCategory(category) == 0) {
-			System.out.println("컨텐츠 수정실패");
+			System.out.println("카테고리 수정실패");
 		} else {
-			System.out.println("컨텐츠 수정성공");
+			System.out.println("카테고리 수정성공");
 		}
 	}
 	
 	public void deleteCategory(String categoryId) {
 		if(categoryDAO.deleteCategory(categoryId) == 0) {
-			System.out.println("컨텐츠 삭제 실패");
+			System.out.println("카테고리 삭제 실패");
 		} else {
-			System.out.println("컨텐츠 삭제 성공");
+			System.out.println("카테고리 삭제 성공");
 		}
 	}
 	

@@ -64,3 +64,18 @@ span.warning{
 	color: red;
 	font-size: medium;
 }
+
+/* 김소망 추가분: 핫아이템조회 */
+#hotContents {
+	clear: both;
+	width: 1355px;
+	height: 400px;
+	margin: 5px auto;
+	text-align: center;
+}
+
+img.weeklyBest {
+	width: 200px;
+	height: 300px;
+	margin: 0 5px;
+}

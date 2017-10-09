@@ -38,7 +38,6 @@ function cancel() {
 window.onload = function() {
 	init();
 }
-
 </script>
 </head>
 <body>

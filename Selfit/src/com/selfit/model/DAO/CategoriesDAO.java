@@ -77,7 +77,7 @@ public class CategoriesDAO {
 			return category;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("컨텐츠 조회 오류");
+			System.out.println("카테고리 조회 오류");
 		} finally {
 			factory.close(conn, pstmt, rs);
 		}
@@ -101,7 +101,7 @@ public class CategoriesDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("컨텐츠 삽입 오류");
+			System.out.println("카테고리 삽입 오류");
 		} finally {
 			factory.close(conn, pstmt);
 		}
@@ -125,7 +125,7 @@ public class CategoriesDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("컨텐츠 수정 오류");
+			System.out.println("카테고리 수정 오류");
 		} finally {
 			factory.close(conn, pstmt);
 		}
@@ -147,7 +147,7 @@ public class CategoriesDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("컨텐츠 삭제 오류");
+			System.out.println("카테고리 삭제 오류");
 		} finally {
 			factory.close(conn, pstmt);
 		}

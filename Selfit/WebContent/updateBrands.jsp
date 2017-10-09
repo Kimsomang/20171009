@@ -30,19 +30,33 @@ window.onload = function() {
 	<%@ include file="header.jsp" %>
 </div>
 <div id="contents">
-	<div id="updateBrandForm">
-	<h3>브랜드 수정 페이지</h3>
-	
+	<h2>브 랜 드 관 리</h2>
 	<form name="brandForm" method="post" action="control?action=updateBrands">
-	<div>
-		<div>브랜드식별번호 : <input type ="text" name="brandsId"></div>
-		<div>브랜드명 : <input type ="text" name="brandsName"></div>
-		<div>브랜드설명 : <input type ="text" name="brandsDesc"></div>
-		<div><input type="submit" id="bt_update" value="확인">
-		<input type="button" value="취소" onClick="cancel()"></div>
+	<div id="updateBrandForm">
+		<div class="trStyle">
+			<div class="tdStyle textSize contentsColumn">브랜드식별번호 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type ="text" name="brandsId" readOnly>
+			</div>
+		</div>
+		<div class="trStyle">	
+			<div class="tdStyle textSize contentsColumn">브랜드명 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type ="text" name="brandsName">
+			</div>
+		</div>
+		<div class="trStyle">	
+			<div class="tdStyle textSize contentsColumn">브랜드설명 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type ="text" name="brandsDesc">
+			</div>
+		</div>
+		<div class="trStyle">
+			<input class="bt_size" type="submit" id="bt_update" value="수정">
+			<input class="bt_size" type="button" value="취소" onClick="cancel()">
+		</div>
 	</div>
 	</form>
-	</div>
 </div>
 <div id="footer">
 	<%@ include file="footer.jsp" %>
