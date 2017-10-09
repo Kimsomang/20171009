@@ -7,41 +7,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Selfit 체형관리</title>
 <link type="text/css" rel="stylesheet" href="css/common.css">
 <link type="text/css" rel="stylesheet" href="css/manage.css">
-<script type="text/javascript">
-function insertB() {
-	var input = document.createElement("input");
-	input.setAttribute("type", "hidden");
-	input.setAttribute("name", "action");
-	input.setAttribute("value", "insertBody");
-	document.getElementById("bt_insert").appendChild(input);
-	document.bodyForm.submit();
-}
-
-function deleteB() {
-	var input = document.createElement("input");
-	input.setAttribute("type", "hidden");
-	input.setAttribute("name", "action");
-	input.setAttribute("value", "deleteBody");
-	document.getElementById("bt_delete").appendChild(input);
-	document.bodyForm.submit();
-}
-</script>
+<script type="text/javascript" src="js/manage.js"></script>
 </head>
 <body>
 <div id="header">
 	<%@ include file="header.jsp" %>
 </div>
 <div id="contents">
+	<h2>체 형 관 리</h2>
 	<div id="bodyTable">
-	<h3>체형관리 페이지</h3>
-	<table border ="1">
+	<table>
 		<tr>
-			<td>체형식별번호</td>
-			<td>체형이름</td>
-			<td>체형설명</td>
+			<td class="table_large">체형식별번호</td>
+			<td class="table_large">체형이름</td>
+			<td class="table_x-large">체형설명</td>
 		</tr>
 		<c:forEach var="idx" items="${requestScope.getAllBodys}">
 		<c:set var="bodyNo" value="${idx.bodyId}" />
@@ -52,16 +34,36 @@ function deleteB() {
 		</tr>
 		</c:forEach>
 	</table>
-	<form name="bodyForm" method="post">	
-		<div style="clear: both">
-			<div>체형식별번호 : <input type = "text" name="bodysId"></div>
-			<div>체형이름 : <input type = "text" name="bodysName"></div>
-			<div>체형설명 : <input type = "text" name="bodysDesc"></div>
-			<div><input type="button" id="bt_insert" value="삽입" onClick="insertB()">
-			<input type="button" id="bt_delete" value="삭제" onClick="deleteB()"></div>
-		</div>
-	</form>
 	</div>
+	<form name="bodyForm" method="post">
+	<div id="bodyDiv">
+		<div class="trStyle">
+			<div class="tdStyle contentsColumn textSize">체형식별번호 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type = "text" name="bodysId" onblur="bodyIdValue()">
+				<span class="error_msg" id="bodyIdCheck"></span>
+			</div>
+		</div>	
+		<div class="trStyle">
+			<div class="tdStyle contentsColumn textSize">체형이름 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type = "text" name="bodysName" onblur="bodyNameValue()">
+				<span class="error_msg" id="bodyNameCheck"></span>
+			</div>
+		</div>
+		<div class="trStyle">	
+			<div class="tdStyle contentsColumn textSize">체형설명 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type = "text" name="bodysDesc">
+			</div>
+		</div>
+	</div>		
+	<div class="trStyle">
+		<input class="bt_size" type="button" id="bt_insert" value="삽입" onClick="insertBody()">
+		<input class="bt_size" type="button" id="bt_delete" value="삭제" onClick="deleteBody()">
+	</div>
+	<h4>* 삭제시에는 체형식별번호만 입력해주세요.</h4>
+	</form>
 </div>
 <div id="footer">
 	<%@ include file="footer.jsp" %>

@@ -19,24 +19,51 @@
 	margin: 5px auto;
 	display: inline-block;
 	vertical-align: middle;
+	overflow: auto;
+	width: 1300px;
+	height: 250px;
+}
+
+#bodyDiv {
+	margin-left: 400px;
+	text-align: center;
 }
 
 #brandTable {
 	margin: 5px auto;
 	display: inline-block;
 	vertical-align: middle;
+	overflow: auto;
+	width: 1300px;
+	height: 250px;
+}
+
+#brandDiv {
+	margin-left: 400px;
+	text-align: center;
 }
 
 #contactTable {
 	margin: 5px auto;
 	display: inline-block;
 	vertical-align: middle;
+	overflow: auto;
+	width: 1000px;
+	height: 500px;
 }
 
-#contentTable {
+#categoryTable {
 	margin: 5px auto;
 	display: inline-block;
 	vertical-align: middle;
+	overflow: auto;
+	width: 1300px;
+	height: 250px;
+}
+
+#categoryDiv {
+	margin-left: 300px;
+	text-align: center;
 }
 
 #updateBodyForm {
@@ -58,31 +85,42 @@
 }
 
 #updateMemberForm {
-	margin: 5px auto;
+	margin-left: 400px;
 	display: inline-block;
 	vertical-align: middle;
-}
-
-div.manageTable {
-	border: 1px solid;
-	border-color: #28282C;
-	margin: 0 auto;
+	overflow: auto;
+	width: 1000px;
+	height: 500px;
 }
 
 div.tdStyle {
 	float: Left;
+	margin: 5px auto;
 }
 
 div.trStyle {
 	clear: both;
+	margin: 5px 10px;
 }
 
 div.contentsColumn {
 	width: 200px;
-	height: 30px;
+	height: 50px;
 	text-align: center;
-	line-height: 30px;
+	line-height: 50px;
 	text-decoration: none;
+}
+
+div.contentsColumn2 {
+	width: 300px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	text-decoration: none;
+}
+
+div.textSize {
+	font-size: x-large;
 }
 
 img.weeklyBest {
@@ -91,10 +129,21 @@ img.weeklyBest {
 	margin: 0 5px;
 }
 
-input.textBox {
-	width: 197px;
-	height: 25px;
-	margin: 0 auto;
+input.tb_normal {
+	width: 400px;
+	height: 50px;
+	font-size: x-large;
+}
+
+input.bt_size {
+	width: 80px;
+	height: 50px;
+	font-size: large;
+}
+
+span.error_msg {
+	color: red;
+	font-size: medium;
 }
 
 .table_small {
@@ -115,4 +164,9 @@ input.textBox {
 .table_larger {
 	table-layout: fixed;
 	width: 300px;
+}
+
+.table_x-large {
+	table-layout: fixed;
+	width: 900px;
 }

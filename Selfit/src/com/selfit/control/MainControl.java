@@ -514,16 +514,21 @@ public class MainControl extends HttpServlet {
 		if (!isAdmin(request, response)) {
 			return;
 		}
-		String memberId = getId(request);
-		if(memberId != null) {
-			Members member = service.getMember(memberId);
+		
+		boolean isLogin = isLogin(request);
+		if(isLogin) {
+			Members member = service.getMember(getId(request));
 			
 			if(member != null) {
 				request.setAttribute("adminInfo", member);
 				request.getRequestDispatcher("/manageInfo.jsp").forward(request, response);
+			} else {
+				request.setAttribute("errorMessage", "관리자 정보조회 실패");
+				request.getRequestDispatcher("/error.jsp").forward(request, response);
 			}
+			
 		} else {
-			request.setAttribute("errorMessage", "관리자 정보 불러오기 실패");
+			request.setAttribute("errorMessage", "로그인 정보가 없습니다.");
 			request.getRequestDispatcher("/error.jsp").forward(request, response);
 		}
 	}
@@ -640,9 +645,9 @@ public class MainControl extends HttpServlet {
 		if (!isAdmin(request, response)) {
 			return;
 		}
-		String categoriesId = request.getParameter("cateId");
-		String categoriesName = request.getParameter("cateName");
-		String categoriesDesc = request.getParameter("cateDesc");
+		String categoriesId = request.getParameter("categoriesId");
+		String categoriesName = request.getParameter("categoriesName");
+		String categoriesDesc = request.getParameter("categoriesDesc");
 		Categories category = new Categories(categoriesId, categoriesName, categoriesDesc);
 		if(category != null) {
 			service.insertCategory(category);
@@ -745,9 +750,9 @@ public class MainControl extends HttpServlet {
 		if (!isAdmin(request, response)) {
 			return;
 		}
-		String categoryId = request.getParameter("cateId");
-		String categoryName = request.getParameter("cateName");
-		String categoryDesc = request.getParameter("cateDesc");
+		String categoryId = request.getParameter("categoriesId");
+		String categoryName = request.getParameter("categoriesName");
+		String categoryDesc = request.getParameter("categoriesDesc");
 		Categories category = new Categories(categoryId, categoryName, categoryDesc);
 		if(category != null) {
 			service.updateCategory(category);
@@ -827,7 +832,7 @@ public class MainControl extends HttpServlet {
 		if (!isAdmin(request, response)) {
 			return;
 		}
-		String categoryId = request.getParameter("cateId");
+		String categoryId = request.getParameter("categoriesId");
 		if(categoryId != null) {
 			service.deleteCategory(categoryId);
 			getAllContents(request, response);

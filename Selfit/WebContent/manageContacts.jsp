@@ -16,16 +16,16 @@
 	<%@ include file="header.jsp" %>
 </div>
 <div id="contents">
+	<h2>제 휴 문 의 관 리</h2>
 	<div id="contactTable">
-	<h3>제휴문의관리페이지</h3>
 	
-	<table border="1">
+	<table>
 		<tr>
-			<td>업체명</td>
-			<td>담당자명</td>
-			<td>업체전화번호</td>
-			<td>업체이메일</td>
-			<td>문의일자</td>
+			<td class="table_large">업체명</td>
+			<td class="table_large">담당자명</td>
+			<td class="table_large">업체전화번호</td>
+			<td class="table_large">업체이메일</td>
+			<td class="table_large">문의일자</td>
 		</tr>
 		<c:forEach var="idx" items="${requestScope.getAllContacts}">
 		<tr>

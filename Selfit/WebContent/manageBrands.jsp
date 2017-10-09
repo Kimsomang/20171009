@@ -10,42 +10,20 @@
 <title>Selfit 브랜드관리</title>
 <link type="text/css" rel="stylesheet" href="css/common.css">
 <link type="text/css" rel="stylesheet" href="css/manage.css">
-<script type="text/javascript">
-function insertB() {
-	var input = document.createElement("input");
-	input.setAttribute("type", "hidden");
-	input.setAttribute("name", "action");
-	input.setAttribute("value", "insertBrand");
-	
-	document.getElementById("bt_insert").appendChild(input);
-	
-	document.brandForm.submit();
-}
-
-function deleteB() {
-	var input = document.createElement("input");
-	input.setAttribute("type", "hidden");
-	input.setAttribute("name", "action");
-	input.setAttribute("value", "deleteBrand");
-	
-	document.getElementById("bt_delete").appendChild(input);
-	
-	document.brandForm.submit();
-}
-</script>
+<script type="text/javascript" src="js/manage.js"></script>
 </head>
 <body>
 <div id="header">
 	<%@ include file="header.jsp" %>
 </div>
 <div id="contents">
-	<h3>브랜드관리 페이지</h3>
+	<h2>브 랜 드 관 리</h2>
 	<div id="brandTable">
-	<table border ="1">
+	<table>
 		<tr>
-			<td>브랜드식별번호</td>
-			<td>브랜드명</td>
-			<td>브랜드설명</td>
+			<td class="table_large">브랜드식별번호</td>
+			<td class="table_large">브랜드명</td>
+			<td class="table_x-large">브랜드설명</td>
 		</tr>
 		<c:forEach var="idx" items="${requestScope.getAllBrands}">
 		<c:set var="brandNo" value="${idx.brandId}" />
@@ -57,34 +35,35 @@ function deleteB() {
 		</c:forEach>
 	</table>
 	</div>
-	<br>
-	<hr>
-	<br>
-	<div id="brandTable">
 	<form name="brandForm" method="post">
-	<div>
+	<div id="brandDiv">
 		<div class="trStyle">
-			<div class="manageTable tdStyle contentsColumn">브랜드식별번호 : </div>
-			<div class="manageTable tdStyle contentsColumn">
-			<input class="textBox" type = "text" name="brandsId"></div>
+			<div class="textSize tdStyle contentsColumn">브랜드식별번호 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type = "text" name="brandsId" onblur="brandIdValue()">
+				<span class="error_msg" id="brandIdCheck"></span>
+			</div>
 		</div>
 		<div class="trStyle">	
-			<div class="manageTable tdStyle contentsColumn">브랜드명 : </div>
-			<div class="manageTable tdStyle contentsColumn">
-			<input class="textBox" type = "text" name="brandsName"></div>
+			<div class="textSize tdStyle contentsColumn">브랜드명 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type = "text" name="brandsName" onblur="brandNameValue()">
+				<span class="error_msg" id="brandNameCheck"></span>
+			</div>
 		</div>
 		<div class="trStyle">	
-			<div class="manageTable tdStyle contentsColumn">브랜드설명 : </div>
-			<div class="manageTable tdStyle contentsColumn">
-			<input class="textBox" type = "text" name="brandsDesc"></div>
+			<div class="textSize tdStyle contentsColumn">브랜드설명 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type = "text" name="brandsDesc">
+			</div>
 		</div>
-		<div class="trStyle">	
-			<input type="button" id="bt_insert" value="삽입" onClick="insertB()">
-			<input type="button" id="bt_delete" value="삭제" onClick="deleteB()">
-		</div>
+	</div>	
+	<div class="trStyle">	
+		<input class="bt_size" type="button" id="bt_insert" value="삽입" onClick="insertBrand()">
+		<input class="bt_size" type="button" id="bt_delete" value="삭제" onClick="deleteBrand()">
 	</div>
+	<h4>* 삭제시에는 브랜드식별번호만 입력해주세요.</h4>
 	</form>
-	</div>
 </div>
 <div id="footer">
 	<%@ include file="footer.jsp" %>

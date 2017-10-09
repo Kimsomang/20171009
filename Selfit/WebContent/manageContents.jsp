@@ -10,45 +10,20 @@
 <title>Selfit 카테고리관리</title>
 <link type="text/css" rel="stylesheet" href="css/common.css">
 <link type="text/css" rel="stylesheet" href="css/manage.css">
-<script type="text/javascript">
-
-function insertC() {
-	var input = document.createElement("input");
-	input.setAttribute("type", "hidden");
-	input.setAttribute("name", "action");
-	input.setAttribute("value", "insertCategory");
-	
-	document.getElementById("bt_insert").appendChild(input);
-	
-	document.categoryForm.submit();
-}
-
-function deleteC() {
-	var input = document.createElement("input");
-	input.setAttribute("type", "hidden");
-	input.setAttribute("name", "action");
-	input.setAttribute("value", "deleteCategory");
-	
-	document.getElementById("bt_delete").appendChild(input);
-	
-	document.categoryForm.submit();
-}
-</script>
+<script type="text/javascript" src="js/manage.js"></script>
 </head>
 <body>
 <div id="header">
 	<%@ include file="header.jsp" %>
 </div>
 <div id="contents">
-	<div id="contentTable">
-	<h3>카테고리(컨텐츠)관리 페이지</h3>
-	
-	<form name="contentsForm">
-	<table border="1">
+	<h2>카 테 고 리 관 리</h2>
+	<div id="categoryTable">
+	<table>
 		<tr>
-			<td>카테고리식별번호</td>
-			<td>카테고리명</td>
-			<td>카테고리설명</td>
+			<td class="table_large">카테고리식별번호</td>
+			<td class="table_large">카테고리명</td>
+			<td class="table_x-large">카테고리설명</td>
 		</tr>
 		<c:forEach var="idx" items="${requestScope.getAllContents}">
 		<c:set var="contentsId" value="${idx.categoriesId}" />
@@ -59,36 +34,36 @@ function deleteC() {
 		</tr>
 		</c:forEach>
 	</table>
-	</form>
 	</div>
-	<br>
-	<hr>
-	<br>
-	<div id="contentTable">
 	<form name="categoryForm" method="post">
-		<div>
-			<div class="trStyle">
-				<div class="manageTable tdStyle contentsColumn">카테고리번호 : </div>
-				<div class="manageTable tdStyle contentsColumn">
-				<input class="textBox" type = "text" name="cateId"></div>
-			</div>
-			<div class="trStyle">
-			<div class="manageTable tdStyle contentsColumn">카테고리이름 : </div>
-			<div class="manageTable tdStyle contentsColumn">
-			<input class="textBox" type = "text" name="cateName"></div>
-			</div>
-			<div class="trStyle">
-			<div class="manageTable tdStyle contentsColumn">카테고리설명 : </div>
-			<div class="manageTable tdStyle contentsColumn">
-			<input class="textBox" type = "text" name="cateDesc"></div>
-			</div>
-			<div class="trStyle">
-			<input type="button" id="bt_insert" value="삽입" onClick="insertC()">
-			<input type="button" id="bt_delete" value="삭제" onClick="deleteC()">
+	<div id="categoryDiv">
+		<div class="trStyle">
+			<div class="textSize tdStyle contentsColumn2">카테고리식별번호 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type = "text" name="categoriesId" onblur="categoryIdValue()">
+				<span class="error_msg" id="categoryIdCheck"></span>
 			</div>
 		</div>
-	</form>
+		<div class="trStyle">
+			<div class="textSize tdStyle contentsColumn2">카테고리명 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type = "text" name="categoriesName" onblur="categoryNameValue()">
+				<span class="error_msg" id="categoryNameCheck"></span>
+			</div>
+		</div>
+		<div class="trStyle">
+			<div class="textSize tdStyle contentsColumn2">카테고리설명 : </div>
+			<div class="tdStyle">
+				<input class="tb_normal" type = "text" name="categoriesDesc">
+			</div>
+		</div>
 	</div>
+	<div class="trStyle">
+		<input class="bt_size" type="button" id="bt_insert" value="삽입" onClick="insertCategory()">
+		<input class="bt_size" type="button" id="bt_delete" value="삭제" onClick="deleteCategory()">
+	</div>
+	<h4>* 삭제시에는 카테고리식별번호만 입력해주세요.</h4>
+	</form>
 </div>
 <div id="footer">
 	<%@ include file="footer.jsp" %>
