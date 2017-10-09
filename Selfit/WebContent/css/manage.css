@@ -20,17 +20,19 @@ div.contentsColumn {
 	text-decoration: none;
 }
 
-#hotContents {
-	clear: both;
-	width: 1355px;
-	height: 200px;
-	border: 1px solid #28282C;
+img.weeklyBest {
+	width: 200px;
+	height: 300px;
 	margin: 5px auto;
 }
 
-#bt_contents {
+#hotContents {
 	clear: both;
-	
+	width: 1355px;
+	height: 400px;
+	border: 1px solid #28282C;
+	margin: 5px auto;
+	text-align: center;
 }
 
 #memberTable {

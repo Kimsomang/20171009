@@ -34,18 +34,18 @@ input.navi{
 }
 
 #logInfo {
-	width: 550px;
+	width: 450px;
 	height: 170px;
 	border: 1px solid #033452;
-	margin: 10px 5px;
+	margin: 10px 0;
 	float: left;
 }
 
 #banner {
-	width: 800px;
+	width: 900px;
 	height: 170px;
 	border: 1px solid #033452;
-	margin: 10px 0;
+	margin: 10px 5px;
 	float: left;
 }
 

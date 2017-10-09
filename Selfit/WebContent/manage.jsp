@@ -23,6 +23,9 @@ if (memberId == null || memberId.trim().isEmpty()) {
 	<%@ include file="header.jsp" %>
 </div>
 <div id="contents">
+	<div id="banner">
+	<input type="image" src="img/img_main.png" name="img_banner" width="900px" height="170px">
+	</div>
 	<div id="logInfo">
 	<p style="text-align: center; line-height: 70px;">관리자님, 환영합니다</p>
 	<a href="control?action=adminInfo">
@@ -32,27 +35,15 @@ if (memberId == null || memberId.trim().isEmpty()) {
 	<input type="image" src="img/bt_logout.png" name="bt_logout"
 	width="150px" height="50px"></a>
 	</div>
-	<div id="banner">
-	<input type="image" src="img/img_main.png" name="img_banner" width="800px" height="170px">
-	</div>
 	<div id="hotContents">
-	</div>
-	<div id="bt_contents">
-		<a href="control?action=allMembers">
-		<input type="image" src="img/img_manageMembers.png" name="manageMember"
-		width="260px" height="200px"></a>
-		<a href="control?action=allBodys">
-		<input type="image" src="img/img_manageBodys.png" name="manageBody"
-		width="260px" height="200px" onClick="moveBodys()"></a>
-		<a href="control?action=allContents">
-		<input type="image" src="img/img_manageContents.png" name="manageContent"
-		width="260px" height="200px" onClick="moveContents()"></a>
-		<a href="control?action=allBrand">
-		<input type="image" src="img/img_manageBrands.png" name="manageBrand"
-		width="260px" height="200px" onClick="moveBrands()"></a>
-		<a href="control?action=allContacts">
-		<input type="image" src="img/img_manageContacts.png" name="manageContact"
-		width="260px" height="200px" onClick="moveContacts()"></a>
+		<h4>W/E/E/K/L/Y/B/E/S/T</h4><br>
+		<img class="weeklyBest" alt="hotContents1" src="img/img_nike.PNG">
+		<img class="weeklyBest" alt="hotContents2" src="img/img_nike2.PNG">
+		<img class="weeklyBest" alt="hotContents3" src="img/img_adidas.PNG">
+		<img class="weeklyBest" alt="hotContents4" src="img/img_adidas2.PNG">
+		<img class="weeklyBest" alt="hotContents5" src="img/img_gucci.PNG">
+		<img class="weeklyBest" alt="hotContents6" src="img/img_8seconds.PNG">
+		<img class="weeklyBest" alt="hotContents7" src="img/img_toryburch.PNG">
 	</div>
 </div>	
 <div id ="footer">
